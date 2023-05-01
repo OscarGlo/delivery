@@ -1,0 +1,35 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://n1vhiwnnkunn"]
+
+[ext_resource type="FontFile" uid="uid://d0cnclw1f3xty" path="res://resources/Teko-Regular.ttf" id="1_lccxb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8aby4"]
+bg_color = Color(0.196078, 0.196078, 0.196078, 0.784314)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60xkg"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enjf2"]
+bg_color = Color(1, 1, 1, 1)
+
+[resource]
+default_base_scale = 1.0
+default_font = ExtResource("1_lccxb")
+default_font_size = 24
+Panel/styles/panel = SubResource("StyleBoxFlat_8aby4")
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/constants/outline_size = 8
+ProgressBar/styles/background = SubResource("StyleBoxFlat_60xkg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_enjf2")

@@ -1,0 +1,50 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://cdibixg0llgrm"]
+
+[ext_resource type="Texture2D" uid="uid://b7rs6xsi8k35u" path="res://resources/textures/objects/tree.png" id="1_05owr"]
+[ext_resource type="Texture2D" uid="uid://vkw1wivf15nd" path="res://resources/textures/objects/rock.png" id="4_5chev"]
+[ext_resource type="Texture2D" uid="uid://bxwjmnc87fdep" path="res://resources/textures/objects/mill.png" id="4_saoha"]
+[ext_resource type="Texture2D" uid="uid://cdic3rx6lh0j4" path="res://resources/textures/empty.png" id="5_3ib33"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4txg"]
+texture = ExtResource("1_05owr")
+texture_region_size = Vector2i(32, 32)
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 14)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.5, -3, 2.5, -3, 2.5, 1.5, -2.5, 1.5)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rcmw"]
+texture = ExtResource("4_saoha")
+texture_region_size = Vector2i(18, 21)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 4)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3iek8"]
+texture = ExtResource("4_5chev")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.5, 8, -4.5, 8, 4, -8, 4)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g144i"]
+resource_name = "wheat"
+texture = ExtResource("5_3ib33")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Pipe"
+terrain_set_0/terrain_0/color = Color(1, 1, 1, 1)
+sources/0 = SubResource("TileSetAtlasSource_y4txg")
+sources/2 = SubResource("TileSetAtlasSource_3iek8")
+sources/3 = SubResource("TileSetAtlasSource_g144i")
+sources/1 = SubResource("TileSetAtlasSource_7rcmw")

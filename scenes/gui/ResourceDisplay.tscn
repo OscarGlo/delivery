@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4vnhew2gedm6"]
+
+[ext_resource type="Script" path="res://scripts/gui/ResourceDisplay.gd" id="1_aolqd"]
+
+[node name="ResourceDisplay" type="HBoxContainer"]
+offset_right = 18.0
+offset_bottom = 26.0
+theme_override_constants/separation = 8
+alignment = 1
+script = ExtResource("1_aolqd")
+
+[node name="Texture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+size_flags_vertical = 4
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "0"
+vertical_alignment = 1

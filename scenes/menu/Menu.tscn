@@ -1,0 +1,558 @@
+[gd_scene load_steps=15 format=3 uid="uid://bmob7bgnmlgc8"]
+
+[ext_resource type="Texture2D" uid="uid://ch6l52ejae78u" path="res://resources/textures/background.png" id="1_8g0ug"]
+[ext_resource type="Theme" uid="uid://n1vhiwnnkunn" path="res://resources/theme.tres" id="1_fhfwk"]
+[ext_resource type="Script" path="res://scripts/Menu.gd" id="2_80gas"]
+[ext_resource type="Texture2D" uid="uid://bhns2pisf25dr" path="res://resources/textures/player/player.png" id="3_1id5i"]
+[ext_resource type="Texture2D" uid="uid://ssj1ihuwsvty" path="res://resources/textures/player/player_walk.png" id="3_x7jsy"]
+[ext_resource type="Texture2D" uid="uid://dp2j4ikwgfrg4" path="res://resources/textures/logo.png" id="4_w4mcy"]
+[ext_resource type="Texture2D" uid="uid://dpf6v6eqp1dxy" path="res://resources/textures/mouse.png" id="5_3dic1"]
+
+[sub_resource type="Animation" id="Animation_b4pu2"]
+resource_name = "menu"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-128, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fb4pd"]
+_data = {
+"menu": SubResource("Animation_b4pu2")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pat75"]
+atlas = ExtResource("3_x7jsy")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inve3"]
+atlas = ExtResource("3_x7jsy")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e7ig"]
+atlas = ExtResource("3_x7jsy")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3and5"]
+atlas = ExtResource("3_x7jsy")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mva8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1id5i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pat75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inve3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e7ig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3and5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "menu"
+libraries = {
+"": SubResource("AnimationLibrary_fb4pd")
+}
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2(-97.28, 0)
+
+[node name="Background" type="Sprite2D" parent="Background"]
+position = Vector2(64, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background2" type="Sprite2D" parent="Background"]
+position = Vector2(64, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background3" type="Sprite2D" parent="Background"]
+position = Vector2(192, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background4" type="Sprite2D" parent="Background"]
+position = Vector2(192, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background5" type="Sprite2D" parent="Background"]
+position = Vector2(64, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background6" type="Sprite2D" parent="Background"]
+position = Vector2(64, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background7" type="Sprite2D" parent="Background"]
+position = Vector2(192, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background8" type="Sprite2D" parent="Background"]
+position = Vector2(192, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background9" type="Sprite2D" parent="Background"]
+position = Vector2(64, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background10" type="Sprite2D" parent="Background"]
+position = Vector2(64, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background11" type="Sprite2D" parent="Background"]
+position = Vector2(192, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background12" type="Sprite2D" parent="Background"]
+position = Vector2(192, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background13" type="Sprite2D" parent="Background"]
+position = Vector2(320, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background14" type="Sprite2D" parent="Background"]
+position = Vector2(320, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background15" type="Sprite2D" parent="Background"]
+position = Vector2(448, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background16" type="Sprite2D" parent="Background"]
+position = Vector2(448, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background17" type="Sprite2D" parent="Background"]
+position = Vector2(320, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background18" type="Sprite2D" parent="Background"]
+position = Vector2(320, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background19" type="Sprite2D" parent="Background"]
+position = Vector2(448, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background20" type="Sprite2D" parent="Background"]
+position = Vector2(448, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background21" type="Sprite2D" parent="Background"]
+position = Vector2(320, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background22" type="Sprite2D" parent="Background"]
+position = Vector2(320, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background23" type="Sprite2D" parent="Background"]
+position = Vector2(448, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background24" type="Sprite2D" parent="Background"]
+position = Vector2(448, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background25" type="Sprite2D" parent="Background"]
+position = Vector2(576, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background26" type="Sprite2D" parent="Background"]
+position = Vector2(576, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background27" type="Sprite2D" parent="Background"]
+position = Vector2(704, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background28" type="Sprite2D" parent="Background"]
+position = Vector2(704, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background29" type="Sprite2D" parent="Background"]
+position = Vector2(576, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background30" type="Sprite2D" parent="Background"]
+position = Vector2(576, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background31" type="Sprite2D" parent="Background"]
+position = Vector2(704, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background32" type="Sprite2D" parent="Background"]
+position = Vector2(704, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background33" type="Sprite2D" parent="Background"]
+position = Vector2(576, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background34" type="Sprite2D" parent="Background"]
+position = Vector2(576, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background35" type="Sprite2D" parent="Background"]
+position = Vector2(704, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background36" type="Sprite2D" parent="Background"]
+position = Vector2(704, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background37" type="Sprite2D" parent="Background"]
+position = Vector2(832, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background38" type="Sprite2D" parent="Background"]
+position = Vector2(832, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background39" type="Sprite2D" parent="Background"]
+position = Vector2(960, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background40" type="Sprite2D" parent="Background"]
+position = Vector2(960, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background41" type="Sprite2D" parent="Background"]
+position = Vector2(832, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background42" type="Sprite2D" parent="Background"]
+position = Vector2(832, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background43" type="Sprite2D" parent="Background"]
+position = Vector2(960, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background44" type="Sprite2D" parent="Background"]
+position = Vector2(960, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background45" type="Sprite2D" parent="Background"]
+position = Vector2(832, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background46" type="Sprite2D" parent="Background"]
+position = Vector2(832, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background47" type="Sprite2D" parent="Background"]
+position = Vector2(960, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background48" type="Sprite2D" parent="Background"]
+position = Vector2(960, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background49" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background50" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background51" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background52" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background53" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background54" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background55" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background56" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background57" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background58" type="Sprite2D" parent="Background"]
+position = Vector2(1088, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background59" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background60" type="Sprite2D" parent="Background"]
+position = Vector2(1216, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background61" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 64)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background62" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 192)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background63" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 320)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background64" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 448)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background65" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 576)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Background66" type="Sprite2D" parent="Background"]
+position = Vector2(1344, 704)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_8g0ug")
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme = ExtResource("1_fhfwk")
+script = ExtResource("2_80gas")
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="ColorRect" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.623529)
+
+[node name="TextureRect" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -163.0
+offset_top = -157.0
+offset_right = 164.0
+offset_bottom = 0.444458
+texture = ExtResource("4_w4mcy")
+expand_mode = 5
+
+[node name="Button" type="Button" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = 47.5
+offset_right = 48.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "  New world  "
+
+[node name="Loading" type="ColorRect" parent="Menu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_fhfwk")
+color = Color(0.203922, 0.203922, 0.203922, 1)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Menu/Loading"]
+y_sort_enabled = true
+position = Vector2(640, 337)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_6mva8")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="Label" type="Label" parent="Menu/Loading"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = 5.0
+offset_right = 197.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Loading..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Menu/Loading"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 150.0
+offset_right = -20.0
+offset_bottom = 197.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "/Use"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Label4" type="Label" parent="Menu/Loading"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = 120.0
+offset_right = -20.0
+offset_bottom = 167.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Place"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Label3" type="Label" parent="Menu/Loading"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = 152.0
+offset_right = 147.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Break"
+vertical_alignment = 2
+
+[node name="Mouse" type="Sprite2D" parent="Menu/Loading"]
+position = Vector2(640, 601)
+scale = Vector2(2, 2)
+texture = ExtResource("5_3dic1")

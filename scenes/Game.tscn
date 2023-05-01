@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyocetv03eoiv"]
+
+[ext_resource type="PackedScene" uid="uid://hw7jsi4pjjm4" path="res://scenes/Character.tscn" id="1_pdm0t"]
+[ext_resource type="TileSet" uid="uid://eo7vvpoarupe" path="res://resources/terrain.tres" id="1_uo5ya"]
+[ext_resource type="Script" path="res://scripts/Terrain.gd" id="2_rvn5h"]
+[ext_resource type="TileSet" uid="uid://cdibixg0llgrm" path="res://resources/objects.tres" id="4_7vyjv"]
+[ext_resource type="PackedScene" uid="uid://dw2mslugh0xo1" path="res://scenes/Preview.tscn" id="5_q3gc1"]
+[ext_resource type="PackedScene" uid="uid://bcb21br16qwv8" path="res://scenes/gui/GUI.tscn" id="5_yqx6f"]
+[ext_resource type="Script" path="res://scripts/Camera.gd" id="7_8faw2"]
+
+[node name="Game" type="Node2D"]
+process_mode = 3
+y_sort_enabled = true
+
+[node name="Terrain" type="TileMap" parent="."]
+process_mode = 3
+z_index = -1
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_uo5ya")
+format = 2
+layer_0/name = "Dirt"
+layer_1/name = "Grass"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Sand"
+layer_2/enabled = true
+layer_2/modulate = Color(1, 1, 1, 1)
+layer_2/y_sort_enabled = false
+layer_2/y_sort_origin = 0
+layer_2/z_index = 0
+layer_2/tile_data = PackedInt32Array()
+layer_3/name = "Water"
+layer_3/enabled = true
+layer_3/modulate = Color(1, 1, 1, 1)
+layer_3/y_sort_enabled = false
+layer_3/y_sort_origin = 0
+layer_3/z_index = 0
+layer_3/tile_data = PackedInt32Array()
+script = ExtResource("2_rvn5h")
+
+[node name="Objects" type="TileMap" parent="."]
+process_mode = 1
+y_sort_enabled = true
+scale = Vector2(2, 2)
+tile_set = ExtResource("4_7vyjv")
+format = 2
+layer_0/name = "Objects"
+layer_0/y_sort_enabled = true
+
+[node name="Resources" type="Node2D" parent="."]
+
+[node name="Preview" parent="." instance=ExtResource("5_q3gc1")]
+z_index = 1
+
+[node name="Character" parent="." instance=ExtResource("1_pdm0t")]
+process_mode = 1
+position = Vector2(2048, 2048)
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+limit_right = 4096
+limit_bottom = 4096
+script = ExtResource("7_8faw2")
+
+[node name="GUI" parent="." instance=ExtResource("5_yqx6f")]
+process_mode = 1

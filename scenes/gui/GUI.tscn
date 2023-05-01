@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcb21br16qwv8"]
+
+[ext_resource type="Script" path="res://scripts/gui/GUI.gd" id="1_8naba"]
+[ext_resource type="Theme" uid="uid://n1vhiwnnkunn" path="res://resources/theme.tres" id="2_ugecl"]
+
+[node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_8naba")
+metadata/_edit_vertical_guides_ = [640.0]
+
+[node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_ugecl")
+
+[node name="ResourceInventory" type="Panel" parent="Screen"]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 89.0
+offset_bottom = 170.0
+
+[node name="Displays" type="VBoxContainer" parent="Screen/ResourceInventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = -12
+
+[node name="Toolbar" type="Panel" parent="Screen"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -90.0
+offset_right = 300.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(300, 80)
+
+[node name="Buttons" type="HBoxContainer" parent="Screen/Toolbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = -304.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
